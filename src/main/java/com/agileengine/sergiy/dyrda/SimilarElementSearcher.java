@@ -36,9 +36,7 @@ public class SimilarElementSearcher {
 
             Deque<ParentNode> parents = new LinkedList<>(similarityPoint.getParentsWithAttributes());
 
-            if (!parents.isEmpty() && parents.size() > 3) {
-                parents.pollFirst(); // remove head
-                parents.pollFirst(); // remove body
+            if (!parents.isEmpty() && parents.size() > 2) { // at least must be head & body
                 parents.pollLast(); // remove last tag to expand query range
             }
 
